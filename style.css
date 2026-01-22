@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* 霓虹背景动画 */
+.neon-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* 深邃宇宙背景，中心蓝紫色星云 */
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(76, 0, 255, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 40% 40%, rgba(0, 200, 255, 0.15) 0%, transparent 35%),
+        radial-gradient(ellipse at center, #0b1026 0%, #000000 100%);
+    overflow: hidden;
+}
+
+#ui-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    text-align: center;
+    pointer-events: none; /* 让点击穿透到 canvas */
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de;
+    letter-spacing: 2px;
+}
+
+.left-controls {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    pointer-events: auto;
+}
+
+.bottom-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    pointer-events: auto;
+}
+
+button {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00ffd5;
+    color: #00ffd5;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 255, 213, 0.3);
+}
+
+button:hover, button.active {
+    background: #00ffd5;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 213, 0.8);
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ff0000;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Neon Rubik's Cube</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+                "canvas-confetti": "https://unpkg.com/canvas-confetti@1.9.2/dist/confetti.module.mjs"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="neon-bg"></div>
+    <div id="canvas-container"></div>
+    
+    <div id="ui-container">
+        <h1 class="title">3D 魔方挑战</h1>
+        
+        <div class="left-controls">
+            <button id="shuffle-btn">随机打乱魔方</button>
+            <button id="reset-btn">复原魔方</button>
+            <button id="undo-btn">撤销上一步</button>
+        </div>
+
+        <div class="bottom-controls">
+            <button id="view-mode-btn" class="active">观察模式</button>
+            <button id="fixed-mode-btn">固定模式</button>
+        </div>
+
+        <div id="message" class="hidden">恭喜！魔方已复原！</div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
